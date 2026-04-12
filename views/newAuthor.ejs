@@ -1,0 +1,57 @@
+<%- include('partials/header') %>
+
+<div class="card p-4">
+    <h2 class="mb-4">Add New Author</h2>
+    <form method="POST" action="/author/new">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="form-label">First Name:</label>
+                <input type="text" class="form-control" name="fName" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Last Name:</label>
+                <input type="text" class="form-control" name="lName" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Date of Birth:</label>
+                <input type="date" class="form-control" name="birthDate" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Date of Death:</label>
+                <input type="date" class="form-control" name="deathDate">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label d-block">Sex:</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="sex" value="M" required> M
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="sex" value="F"> F
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Profession:</label>
+                <input type="text" class="form-control" name="profession" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Country:</label>
+                <input type="text" class="form-control" name="country" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Portrait URL:</label>
+                <input type="text" class="form-control" name="portrait" required>
+            </div>
+            <div class="col-12 mb-3">
+                <label class="form-label">Bio:</label>
+                <textarea class="form-control" name="biography" rows="4" required></textarea>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary px-4">Add Author</button>
+    </form>
+    
+    <% if (typeof message != "undefined"){ %>
+        <div class="alert alert-info mt-3"><%= message %></div>
+    <% } %>
+</div>
+
+<%- include('partials/footer') %>

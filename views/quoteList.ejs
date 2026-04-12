@@ -1,0 +1,33 @@
+<%- include('partials/header') %>
+
+<div class="card p-4">
+    <h1 class="border-bottom pb-3 mb-4">Manage Quotes</h1>
+    
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Quote</th>
+                    <th>Author</th>
+                    <th>Category</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% quotes.forEach(q => { %>
+                <tr>
+                    <td class="small">"<%= q.quote %>"</td>
+                    <td><%= q.firstName %> <%= q.lastName %></td>
+                    <td><span class="badge bg-secondary"><%= q.category %></span></td>
+                    <td>
+                        <a href="/quote/edit?quoteId=<%= q.quoteId %>" class="text-primary me-2"><i class="fas fa-edit"></i></a>
+                        <a href="/quote/delete?quoteId=<%= q.quoteId %>" class="text-danger" onclick="return confirm('Delete quote?')"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

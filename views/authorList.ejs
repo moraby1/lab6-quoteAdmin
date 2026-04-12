@@ -1,0 +1,19 @@
+<%- include('partials/header') %>
+
+<div class="card p-4">
+    <h1 class="border-bottom pb-3 mb-4">Updating & Deleting Authors</h1>
+    
+    <div class="list-group">
+        <% authors.forEach(author => { %>
+            <div class="list-group-item d-flex align-items-center justify-content-between border-0 border-bottom">
+                <div class="d-flex align-items-center">
+                    <a href="/author/edit?authorId=<%= author.authorId %>" class="btn btn-link text-primary"><i class="fas fa-user-edit"></i></a>
+                    <a href="/author/delete?authorId=<%= author.authorId %>" class="btn btn-link text-danger" onclick="return confirm('Delete this author?')"><i class="fas fa-minus-circle"></i></a>
+                    <span class="ms-3 fw-bold"><%= author.firstName %> <%= author.lastName %></span>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

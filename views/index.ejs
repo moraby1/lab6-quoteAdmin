@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+
+<div class="card p-4">
+    <h1 class="border-bottom pb-3 mb-4">Admin Section</h1>
+    <div class="row g-4 text-center">
+        <div class="col-md-3">
+            <a href="/authors" class="btn btn-orange w-100 py-3"><i class="fas fa-users"></i><br>Display Authors</a>
+        </div>
+        <div class="col-md-3">
+            <a href="/author/new" class="btn btn-success w-100 py-3"><i class="fas fa-user-plus"></i><br>Add Authors</a>
+        </div>
+        <div class="col-md-3">
+            <a href="/quotes" class="btn btn-orange w-100 py-3"><i class="fas fa-list"></i><br>Display Quotes</a>
+        </div>
+        <div class="col-md-3">
+            <a href="/quote/new" class="btn btn-success w-100 py-3"><i class="fas fa-quote-right"></i><br>Add Quotes</a>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

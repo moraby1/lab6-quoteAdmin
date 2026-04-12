@@ -1,0 +1,68 @@
+<%- include('partials/header') %>
+
+<div class="card p-4">
+    <h1 class="border-bottom pb-3 mb-4">Updating Author Data</h1>
+
+    <form method="POST" action="/author/edit">
+        <input type="hidden" name="authorId" value="<%=authorInfo[0].authorId%>">
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="form-label">First Name:</label>
+                <input type="text" class="form-control" name="fName" value="<%=authorInfo[0].firstName%>" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Last Name:</label>
+                <input type="text" class="form-control" name="lName" value="<%=authorInfo[0].lastName%>" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Date of Birth:</label>
+                <input type="date" class="form-control" name="dob" value="<%=authorInfo[0].dobISO%>" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Date of Death:</label>
+                <input type="date" class="form-control" name="dod" value="<%=authorInfo[0].dodISO%>">
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label class="form-label d-block">Sex:</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="sex" value="M" <%= authorInfo[0].sex == "M" ? "checked" : "" %> required> M
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="sex" value="F" <%= authorInfo[0].sex == "F" ? "checked" : "" %>> F
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Profession:</label>
+                <input type="text" class="form-control" name="profession" value="<%=authorInfo[0].profession%>" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Country:</label>
+                <input type="text" class="form-control" name="country" value="<%=authorInfo[0].country%>" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Portrait URL:</label>
+                <input type="text" class="form-control" name="portrait" value="<%=authorInfo[0].portrait%>" required>
+            </div>
+
+            <div class="col-12 mb-3">
+                <label class="form-label">Biography:</label>
+                <textarea class="form-control" name="biography" rows="5" required><%=authorInfo[0].biography%></textarea>
+            </div>
+        </div>
+
+        <div class="mt-3">
+            <button type="submit" class="btn btn-primary px-4">Update Author</button>
+            <a href="/authors" class="btn btn-outline-secondary px-4 ms-2">Cancel</a>
+        </div>
+    </form>   
+</div>
+
+<%- include('partials/footer') %>
