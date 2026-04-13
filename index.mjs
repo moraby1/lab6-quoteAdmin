@@ -8,9 +8,9 @@ app.use(express.urlencoded({extended:true}));
 
 const conn = mysql.createPool({
     host: "sql5.freesqldatabase.com",
-    user: "sql5822438",
-    password: "qb11yrRYkn",
-    database: "sql5822438",
+    user: "sql5823109",
+    password: "j21ETqWgXz",
+    database: "sql5823109",
     connectionLimit: 10
 });
 
